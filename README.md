@@ -5,3 +5,7 @@ Still a lot to do on this project, but so far it reads in a list of SVG files an
 
 
 The testing so far was PCB created with EasyEDA online PCB editing software, SVG files exported from gerbv Gerber Viewer Software, and Blender 2.8.2
+
+
+Early drafts of the Doxygen generated documentation is available at https://francis-chris5.github.io/GerberToBlender/ 
+
