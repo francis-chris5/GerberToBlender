@@ -9,7 +9,7 @@ Secondly, sometimes I feel that the 2D layout is not suffecient for examining a 
 
 I figure I'm not the only one who does this stuff with Arduino or Rasberry Pi project so I'd share it on here.
 
-Still a lot to do on this project, but so far it reads in a list of SVG files and sets up the x and y positions and sizes for each layer of the PCB. It also applies the materials to all the objects once they're finished. So basically only the first and last steps are complete so far, still have to set up extrusions, and a couple modifiers, and eventually it will produce two versions of a completed model, one as a single piece and one separated into components.
+Still a lot to do on this project, but so far it reads in a list of SVG files (must be set up in a folder with a text file called "names" --folder not generated yet--, and a filebrowser will select the directory) and sets up the x and y positions and sizes for each layer of the PCB. Then it applies modifiers to change the remaining 2d curves into 3d meshes and drill the holes through all the components. It finally applies the materials to all the objects once they're finished. So basically only the first and last steps are complete so far, still have to set up extrusions, and eventually it will produce two versions of a completed model, one as a single piece and one separated into components.
 
 
 The testing so far was PCB created with EasyEDA online PCB editing software, SVG files exported from gerbv Gerber Viewer Software, and scripted with Blender 2.8.3 API.
