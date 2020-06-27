@@ -1,6 +1,8 @@
 # GerberToBlender
 A plugin for Blender 3D modeling software which (when completed) will import SVG exports of a Gerber file into an accurate virtual model of the PCB. 
 
+Just in case you didn't notice while developing this project the .py files have been given names that prevent importing. A couple refactorings from now and they'll be consolidated into a single module, plus whatever other files are necessary to put it in a panel or menu or someplace on the Blender GUI (probably the file -> import -> ... menu).
+
 I had two reasons for making this.
 
 First off, I want to start 3d-printing out cases for some of my Arduino or Rasberry Pi hobby projects, and wanted an accurate virtual model of the boards I order for designing those casings. Virtual models of most components can be downloaded right from the manufacturers for this, but not custom PCB's or SMT's.
