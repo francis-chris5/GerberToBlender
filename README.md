@@ -1,10 +1,18 @@
 # GerberToBlender
-A plugin for Blender 3D modeling software which (when completed) will import SVG exports of a Gerber file into an accurate virtual model of the PCB
+A plugin for Blender 3D modeling software which (when completed) will import SVG exports of a Gerber file into an accurate virtual model of the PCB. 
 
-Still a lot to do on this project, but so far it reads in a list of SVG files and sets up the x and y positions and sizes for each layer of the PCB. So basically only step one is completed so far, but eventually it will produce two versions of a completed model, one as a single piece and one separated into components.
+I had two reasons for making this.
+
+First off, I want to start 3d-printing out cases for some of my Arduino or Rasberry Pi hobby projects, and wanted an accurate virtual model of the boards I order for designing those casings. Virtual models of most components can be downloaded right from the manufacturers for this, but not custom PCB's or SMT's.
+
+Secondly, sometimes I feel that the 2D layout is not suffecient for examining a PCB before placing the order -I recently got one in with a tiny mistake (I left the pads for resistors and transitors from the SMT in the PCB I planned to solder by hand for a prototype). I would have caught that easily in a 3D virtual model, and now have to wait a couple weeks for the corrected design -I'm not paying rapid shipping rates for two dollars worth of PCB's to come from China.
+
+I figure I'm not the only one who does this stuff with Arduino or Rasberry Pi project so I'd share it on here.
+
+Still a lot to do on this project, but so far it reads in a list of SVG files and sets up the x and y positions and sizes for each layer of the PCB. It also applies the materials to all the objects once they're finished. So basically only the first and last steps are complete so far, still have to set up extrusions, and a couple modifiers, and eventually it will produce two versions of a completed model, one as a single piece and one separated into components.
 
 
-The testing so far was PCB created with EasyEDA online PCB editing software, SVG files exported from gerbv Gerber Viewer Software, and Blender 2.8.2
+The testing so far was PCB created with EasyEDA online PCB editing software, SVG files exported from gerbv Gerber Viewer Software, and scripted with Blender 2.8.3 API.
 
 
 Early drafts of the Doxygen generated documentation is available at https://francis-chris5.github.io/GerberToBlender/ 
