@@ -23,7 +23,7 @@ files = ["board_outline.svg", "bottom_solder.svg", "bottom_layer.svg", "top_laye
 
 
 ##
-# Brings in the SVG file, applies the x and y orientation, converts the curves to meshes, scales it to 1 meter in blender equals 1 millimeter in the real world, and places the objects into a collection ... \(still to come: extrusions, height placement, materials, cut the holes, and join a copy into a completed version\)\n
+# Brings in the SVG file, applies the x and y orientation, converts the curves to meshes, scales it to 1 meter in blender equals 1 millimeter in the real world, and places the objects into a collection ... \(still to come: extrusions, height placement, cut the holes, and join a copy into a completed version\)\n
 # Uses Blender 2.8.2 or higher API
 # @param dir -the directory where the files are located
 # @param file -the list of SVG files representing the Gerber Files / PCB
@@ -80,3 +80,37 @@ def import_svg(dir, file):
 for f in files:
     import_svg(directory, f)
 
+
+
+
+""" WORKED
+
+bpy.ops.import_curve.svg(filepath="C:/Users/Chris/Documents/AB_Controller/Documentation/Model/bottom_layer.svg")
+
+
+context = bpy.context
+scene = context.scene
+
+col = bpy.data.collections.get("bottom_layer.svg")
+if col:
+    for obj in col.objects:    
+        obj.select_set(True)
+        bpy.context.view_layer.objects.active = obj
+        obj.to_mesh(preserve_all_data_layers=True)
+        
+
+bpy.ops.object.join()
+layer = bpy.context.selected_objects[0]
+layer.name = "bottom_layer"
+layer.scale = (1000, 1000, 1000)
+bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
+
+
+
+bpy.ops.object.move_to_collection(collection_index = 0, is_new = True, new_collection_name="layers")
+
+col = bpy.data.collections.get("bottom_layer.svg")
+if col:
+    bpy.data.collections.remove(col)
+    
+"""
