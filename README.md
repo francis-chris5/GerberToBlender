@@ -9,3 +9,9 @@ The testing so far was PCB created with EasyEDA online PCB editing software, SVG
 
 Early drafts of the Doxygen generated documentation is available at https://francis-chris5.github.io/GerberToBlender/ 
 
+
+
+With the first draft of the apply materials script done I wanted to put some pictures here. For these images I ran the 'import curves.py' script, had to do the extrusions and modifiers by hand but those scripts will be coming soon and the generated images will take the place of these, then ran the 'apply materials.py' script.
+
+![screenshot_1](https://user-images.githubusercontent.com/50467171/85911989-ef215b80-b7f6-11ea-824b-2f91e12ab948.png)
+![screenshot_2](https://user-images.githubusercontent.com/50467171/85911992-f183b580-b7f6-11ea-8711-826e96492884.png)
