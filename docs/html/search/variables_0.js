@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['context_18',['context',['../namespaceextrude_01layers.html#a0c3824807b49608b0f8086003efb2ba3',1,'extrude layers']]]
+  ['directory_14',['directory',['../namespaceimport_01curves.html#aca75ed98cac26a58a0bc8ff172f95b87',1,'import curves']]]
 ];

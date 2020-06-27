@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['import_5fsvg_17',['import_svg',['../namespaceimport_01curves.html#ab519b3256634ad2ec4a4125729869b10',1,'import curves']]]
+  ['apply_5fmaterials_12',['apply_materials',['../namespaceapply_01materials.html#ab4f602048e7e8e80fc7cb6e140ac7c19',1,'apply materials']]]
 ];

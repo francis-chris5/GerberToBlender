@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['extrude_20layers_2',['extrude layers',['../namespaceextrude_01layers.html',1,'']]],
-  ['extrude_20layers_2epy_3',['extrude layers.py',['../extrude_01layers_8py.html',1,'']]]
+  ['files_4',['files',['../namespaceimport_01curves.html#a0c14b18631108d2b2de9d859c696dee0',1,'import curves']]]
 ];
