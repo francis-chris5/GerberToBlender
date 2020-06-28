@@ -16,20 +16,33 @@ Still a lot to do on this project, but so far it reads in a list of SVG files (m
 
 Current Instructions:
 <blockquote>
-  1.) using GerbV 2.7 export the gerer files as SVG files, each layer needs to include the board outline to import correctly for the automated parts --done manually working on automating this part\n
-  2.) include a filenames.txt file in the folder with the svg (I always use 2-layer boards with top silk screen, the filenames.txt file is included in this repository)\n
-  3.) run the import_pcb.py script\n
-  4.) extrusions: --still done manually, script coming soon\n
-  \t\t*board_outline: remove duplicate vertices, add in face, extrude 2.4 up z axis\n
-  \t\t*bottom_solder: remove duplicate vertices, remove board outline, put faces on remaining vertices, move 0.01 down z axis\n
-  \t\t*bottom_layer: remove duplicate vertices,  remove board outline, extrude 0.8 up z axis, move 0.2 up z axis, add faces\n
-  \t\t*top_layer: remove duplicate verties,  remove board outline, extrude 0.8 up z axis, move 1.4 up z axis, add faces\n
-  \t\t*top_solder: remove duplicates vertices,  remove board outline, add faces, move 2.41 up z axis, flip normals
-  \t\t*silk_screen: remove duplicates vertices,  remove board outline, extrude 0.1 on x axis, extrude 0.1 on y axis move 2.41 up z axis
-  5.) run the "apply materials.py" script\n
-  6.) run the "solidify modifier.py" script\n
-  7.) run the "boolean modifier.py" script\n
-  8.) run the "harden board.py" script\n
+  1.) using GerbV 2.7 export the gerer files as SVG files, each layer needs to include the board outline to import correctly for the automated parts --done manually working on automating this part
+  
+  2.) include a filenames.txt file in the folder with the svg (I always use 2-layer boards with top silk screen, the filenames.txt file is included in this repository)
+  
+  3.) run the import_pcb.py script
+  
+  4.) extrusions: --still done manually, script coming soon
+  
+  *board_outline: remove duplicate vertices, add in face, extrude 2.4 up z axis
+  
+  *bottom_solder: remove duplicate vertices, remove board outline, put faces on remaining vertices, move 0.01 down z axis
+  
+  *bottom_layer: remove duplicate vertices,  remove board outline, extrude 0.8 up z axis, move 0.2 up z axis, add faces
+  
+  *top_layer: remove duplicate verties,  remove board outline, extrude 0.8 up z axis, move 1.4 up z axis, add faces
+  
+  *top_solder: remove duplicates vertices,  remove board outline, add faces, move 2.41 up z axis, flip normals
+  
+  *silk_screen: remove duplicates vertices,  remove board outline, extrude 0.1 on x axis, extrude 0.1 on y axis move 2.41 up z axis
+  
+  5.) run the "apply materials.py" script
+  
+  6.) run the "solidify modifier.py" script
+  
+  7.) run the "boolean modifier.py" script
+  
+  8.) run the "harden board.py" script
 </blockquote>
 
 
