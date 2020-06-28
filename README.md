@@ -18,6 +18,7 @@ Current Instructions:
 <blockquote>
   1.) using GerbV 2.7 export the gerer files as SVG files, each layer needs to include the board outline to import correctly for the automated parts --done manually working on automating this part
   
+  
   2.) include a filenames.txt file in the folder with the svg (I always use 2-layer boards with top silk screen, the filenames.txt file is included in this repository)
   
   3.) run the import_pcb.py script
