@@ -54,7 +54,7 @@ Early drafts of the Doxygen generated documentation is available at https://fran
 
 
 
-With the first draft of the apply materials script done I wanted to put some pictures here. For these images I ran the 'import curves.py' script, had to do the extrusions and modifiers by hand but those scripts will be coming soon and the generated images will take the place of these, then ran the 'apply materials.py' script.
+With the first draft of some of the scripts done (definitely some refactoring needed here) I wanted to put some pictures here. For these images I ran the 'import curves.py' script, had to do the extrusions by hand but those scripts will be coming soon and the generated images will take the place of these, then ran the rest of the scripts.
 
 ![screenshot_1](https://user-images.githubusercontent.com/50467171/85934884-78986280-b8b7-11ea-8d2d-020a78c76475.png)
 ![screenshot_2](https://user-images.githubusercontent.com/50467171/85934885-7afabc80-b8b7-11ea-931a-9a0ff1f67b9f.png)
