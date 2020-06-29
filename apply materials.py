@@ -34,7 +34,7 @@ def apply_materials():
             object = bpy.context.selected_objects[0]
             data = object.data
             material = bpy.data.materials.new("board")
-            material.diffuse_color = (0.062, 0.296, 0.020, 0.9)
+            material.diffuse_color = (0.062, 0.296, 0.020, 0.99)
             data.materials.append(material)
             object.active_material.metallic = 0.234
             object.active_material.roughness = 0.20

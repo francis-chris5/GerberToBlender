@@ -13,8 +13,8 @@ def revealAll():
             layer.hide_set(False)
             
      
-##
-# Turns visibility off for all objects           
+ ##
+ # Turns visibility off for all objects           
 def hideAll():
     for layer in bpy.data.objects:
         layer.select_set(False)
@@ -23,7 +23,7 @@ def hideAll():
 
 
 ##
-# Applies a thickness to the 2d \(only extruded along z by this point\) curves representing the traces for the top and bottom layer in the PCB
+# Applies a thickness to the 2d \(extruded along z by this point\) curves representing the traces for the top and bottom layer in the PCB
 def solidify():
     context = bpy.context
     scene = context.scene
