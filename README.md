@@ -20,6 +20,9 @@ Current Instructions:
  
 </blockquote>
 
+A video walking through these instructions can be found at https://youtu.be/a3hJ6541-y0
+
+
 
 The testing so far was PCB created with EasyEDA online PCB editing software, SVG files exported from GerbV 2.7 Gerber Viewer Software, and scripted with Blender 2.8.3 API.
 
