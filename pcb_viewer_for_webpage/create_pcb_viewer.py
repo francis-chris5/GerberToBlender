@@ -1,18 +1,21 @@
 
 
 ##
+# @file
 # @section description
 # Imports svg files exported from GerberV 2.7 and assembles a webpage for
 # documenting the pcb with the ability to turn layers on and off with the
 # toggling of a checkbox
 
 
-# write html file up to the start of the body
+##
+# list to build up with html 5.1 code with each \"readable\" line as the elements to be written to a file one list element at a time.
 tags = ["<!DOCTYPE html>", "<html>", "<head>", "<style>", ".controls{", "width: 20%;", "float: left;", "text-align: right;", "}", ".viewport{", "width: 75%;", "}" "svg{","background-color: #212121;", "margin: 2.4em;", "}", "</style>", "</head>", "<body onload=\"setDisplay()\">", "<section class=\"controls\">"]
 
 
 
-# get the names of the layers in the pcb
+##
+# list holding the names of the .svg files to bring into the webpage, read from the file filenames.txt
 layerNames = []
 with open("filenames.txt", "r") as fromFile:
     for line in fromFile:
@@ -30,7 +33,8 @@ tags.append("<section class=\"viewport\">")
 
 
 
-# read in the svg data
+##
+# boolean value to control when it starts and stops reading from the .svg files
 isReading = False
 for layer in layerNames:
     with open(layer, "r") as fromFile:
@@ -74,7 +78,8 @@ tags.append("</html>")
 
 
 
-# write the svg data to the page
+##
+# File handler to write the elements in the tags list to the file pcb.html. This file will likely need renamed to go into particular projects, or the code can be embedded or copied and pasted into the webpage it actually goes in.
 toFile = open("pcb.html", "w")
 for tag in tags:
     toFile.write(tag)
