@@ -8,7 +8,7 @@
 
 
 # write html file up to the start of the body
-tags = ["<!DOCTYPE html>", "<html>", "<head>", "<style>", ".controls{", "width: 20%;", "float: left;", "text-align: right;", "}", ".controls button{", "display: block;", "}", ".viewport{", "width: 75%;", "}" "svg{", "background-color: #212121;", "margin: 2.4em;", "}", "</style>", "</head>", "<body>", "<section class=\"controls\">"]
+tags = ["<!DOCTYPE html>", "<html>", "<head>", "<style>", ".controls{", "width: 20%;", "float: left;", "text-align: right;", "}", ".viewport{", "width: 75%;", "}" "svg{","background-color: #212121;", "margin: 2.4em;", "}", "</style>", "</head>", "<body onload=\"setDisplay()\">", "<section class=\"controls\">"]
 
 
 
@@ -50,15 +50,22 @@ tags.append("</svg>")
 
 
 
-
+# finish out the html with a script and closing tags
 tags.append("</section>")
 tags.append("<script>")
+tags.append("function setDisplay(){")
+tags.append("let g = document.getElementsByTagName('G');")
+tags.append("for(let i = 0; i < g.length; i++){")
+tags.append("g[i].style.display = \"none\";")
+tags.append("Display(g[i].id);")
+tags.append("}")
+tags.append("}//end setDisplay()")
 tags.append("function Display(layer){")
-tags.append("if(document.getElementById(layer).style.display == \"block\"){")
-tags.append("document.getElementById(layer).style.display = \"none\";")
+tags.append("if(document.getElementById(layer).style.display == \"none\"){")
+tags.append("document.getElementById(layer).style.display = \"block\";")
 tags.append("}")
 tags.append("else{")
-tags.append("document.getElementById(layer).style.display = \"block\";")
+tags.append("document.getElementById(layer).style.display = \"none\";")
 tags.append("}")
 tags.append("}//end Display()")
 tags.append("</script>")
