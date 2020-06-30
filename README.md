@@ -11,7 +11,7 @@ I figure I'm not the only one who does this stuff with my Arduino or Rasberry Pi
 
 Current Instructions:
 <blockquote>
-  1.) using GerbV 2.7 export the gerer files as SVG files, each layer needs to include the board outline to import correctly for the automated parts --must be done manually for now, I'm working on automating this part, or eventually I may take the time to figure out how to translate the machine vector instructions in the Gerber files into an svg myself. I chose this format because personally I like to put these layers directly into the webpage documentation I make for my Arduino projects, so I have them anyway in a project.
+  1.) using GerbV 2.7 export the gerer files as SVG files, each layer needs to include the board outline to import correctly for the automated parts --must be done manually for now, I'm working on automating this part, or eventually I may take the time to figure out how to translate the machine vector instructions in the Gerber files into an svg myself. I chose this format because personally I like to put these layers directly into the webpage documentation I make for my Arduino projects, so I already have them in a project.
   
   
   2.) include a filenames.txt file in the folder with the svg (I always use 2-layer boards with top silk screen and solder pads on the top and the bottom, the filenames.txt file is included in this repository)
