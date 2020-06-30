@@ -39,38 +39,78 @@ class ImportPCB(Operator, ImportHelper):
     
     
     def execute(self, context):
-        filenames = []
-        directory = self.properties.filepath
-        cut = directory.rindex("\\")
-        directory = directory[0:cut]        
-        with open(directory + "\\filenames.txt", mode="r") as file:
-            for line in file:
-               filenames.append(line[0:-1])
-                      
-        for file in filenames:
-            import_svg(directory, file)
-        
-        bpy.ops.object.select_all(action="SELECT")
-        for layer in bpy.context.selected_objects:
-            if layer.name != "board_outline":
-                removeExtraVerts(layer)
-                removeOutline(layer)
-            else:
-                removeExtraVerts(layer)
+        try:
+            filenames = []
+            directory = self.properties.filepath
+            cut = directory.rindex("\\")
+            directory = directory[0:cut]        
+            with open(directory + "\\filenames.txt", mode="r") as file:
+                for line in file:
+                   filenames.append(line[0:-1])
+                          
+            for file in filenames:
+                import_svg(directory, file)
+            
+            bpy.ops.object.select_all(action="SELECT")
+            for layer in bpy.context.selected_objects:
+                if layer.name != "board_outline":
+                    removeExtraVerts(layer)
+                    removeOutline(layer)
+                else:
+                    removeExtraVerts(layer)
 
 
-        extrudeLayers()
-        
-        apply_materials()
-        
-        solidify()
-        
-        drill()
-        
-        harden()
+            extrudeLayers()
+            
+            apply_materials()
+            
+            solidify()
+            
+            drill()
+            
+            harden()
+        except:
+            bpy.ops.pcb.import_error("INVOKE_DEFAULT")
 
         return {"FINISHED"}
 
+
+
+
+##
+# Dialog box to handle error messages
+class ErrorDialog(Operator):
+    bl_idname = "pcb.import_error"
+    bl_label = "Import PCB Error"
+    
+    message = "An error occurred, please make sure all required files are in the selected folder and try again."
+    
+    
+    def execute(self, context):
+        
+        return {"FINISHED"}
+    
+    
+    def invoke(self, context, event):
+        return context.window_manager.invoke_props_dialog(self)
+    
+
+
+##
+# Dialog box to handle error messages
+class ErrorDialog(Operator):
+    bl_idname = "pcb.import_error"
+    bl_label = "Import PCB Error"
+
+    text = StringProperty(name="An Error Occurred", default="Please Try Again")
+    
+    def execute(self, context):
+        return {"FINISHED"}
+    
+    
+    def invoke(self, context, event):
+        return context.window_manager.invoke_props_dialog(self)
+    
 
     
 ##
@@ -78,20 +118,14 @@ class ImportPCB(Operator, ImportHelper):
 # in later versions register it to whichever menu or panel it will be called from
 def register():
     bpy.utils.register_class(ImportPCB)
-    
+    bpy.utils.register_class(ErrorDialog)
 
 ##
 # Removes this class from the list the bpy module knows about 
 def unregister():
     bpy.utils.unregister_class(ImportPCB)
+    bpy.utils.unregister_class(ErrorDialog)
     
-    
-
-if __name__ == "__main__":
-    register()
-    bpy.ops.pcb.import_svg("INVOKE_DEFAULT")
-
-
 
 
 
@@ -518,3 +552,11 @@ def harden():
         if layer.name != "PCB":
             layer.location.x += 100
 
+
+
+
+
+if __name__ == "__main__":
+    register()
+    bpy.ops.pcb.import_svg("INVOKE_DEFAULT")
+    
