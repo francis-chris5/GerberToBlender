@@ -11,6 +11,14 @@ bl_info = {
 }
 
 
+##
+# @mainpage
+# @section description Description
+# This module contains methods to import svg file exports from a collection of Gerber files and automatically turns the imports into a 3D model of the PCB in Blender.\n
+# For putting it together and only testing so far, the PCB was designed using EasyEDA online circuit editing software. The exported Gerber files were opened in gerbv Gerber Viewer software, from which the SVG files were exported. The components of the model will be named identical to the SVG files.
+# @section Author
+# Developed By: Christopher S. Francis 25 June 2020 to ...
+
 
 import bpy
 import math
