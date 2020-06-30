@@ -21,7 +21,7 @@ Current Instructions:
 </blockquote>
 
 
-The testing so far was PCB created with EasyEDA online PCB editing software, SVG files exported from gerbv Gerber Viewer Software, and scripted with Blender 2.8.3 API.
+The testing so far was PCB created with EasyEDA online PCB editing software, SVG files exported from GerbV 2.7 Gerber Viewer Software, and scripted with Blender 2.8.3 API.
 
 
 Early drafts of the Doxygen generated documentation is available at https://francis-chris5.github.io/GerberToBlender/ 
