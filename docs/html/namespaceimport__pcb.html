@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Gerber to Blender Import: import_pcb Namespace Reference</title>
+<title>Gerber To Blender Import: import_pcb Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,7 +18,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Gerber to Blender Import
+   <div id="projectname">Gerber To Blender Import
    </div>
   </td>
  </tr>
@@ -40,7 +40,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">import_pcb Namespace Reference</div>  </div>
 </div><!--header-->
@@ -56,14 +57,157 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae87bc6cece3939cff1d6f7f24a32c207"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#ae87bc6cece3939cff1d6f7f24a32c207">register</a> ()</td></tr>
+<tr class="memdesc:ae87bc6cece3939cff1d6f7f24a32c207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds this class to the list the bpy module knows about, necessary to run it<br  />
+ in later versions register it to whichever menu or panel it will be called from.  <a href="namespaceimport__pcb.html#ae87bc6cece3939cff1d6f7f24a32c207">More...</a><br /></td></tr>
 <tr class="separator:ae87bc6cece3939cff1d6f7f24a32c207"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a139c0f086c0befca66e8969c353889fc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a139c0f086c0befca66e8969c353889fc">unregister</a> ()</td></tr>
+<tr class="memdesc:a139c0f086c0befca66e8969c353889fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes this class from the list the bpy module knows about.  <a href="namespaceimport__pcb.html#a139c0f086c0befca66e8969c353889fc">More...</a><br /></td></tr>
 <tr class="separator:a139c0f086c0befca66e8969c353889fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1da7eebfd473fa3b364696edfca1712d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a1da7eebfd473fa3b364696edfca1712d">hideAll</a> ()</td></tr>
+<tr class="memdesc:a1da7eebfd473fa3b364696edfca1712d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns visibility off for all objects <br  />
+  <a href="namespaceimport__pcb.html#a1da7eebfd473fa3b364696edfca1712d">More...</a><br /></td></tr>
+<tr class="separator:a1da7eebfd473fa3b364696edfca1712d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf30af908be47ae889eccd976ffa4f52"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#acf30af908be47ae889eccd976ffa4f52">revealAll</a> ()</td></tr>
+<tr class="memdesc:acf30af908be47ae889eccd976ffa4f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns on all objects which are part of the PCB, this excludes the drill_holes tool object.  <a href="namespaceimport__pcb.html#acf30af908be47ae889eccd976ffa4f52">More...</a><br /></td></tr>
+<tr class="separator:acf30af908be47ae889eccd976ffa4f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad874a884b9cd1fb709c6f50e7e39af93"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#ad874a884b9cd1fb709c6f50e7e39af93">import_svg</a> (dir, file)</td></tr>
 <tr class="memdesc:ad874a884b9cd1fb709c6f50e7e39af93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brings in the SVG file, applies the x and y orientation, converts the curves to meshes, scales it to 1 meter in blender equals 1 millimeter in the real world, and places the objects into a collection ...  <a href="namespaceimport__pcb.html#ad874a884b9cd1fb709c6f50e7e39af93">More...</a><br /></td></tr>
 <tr class="separator:ad874a884b9cd1fb709c6f50e7e39af93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a490e0a8cfbef90194ca9fcec0d9ce52e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a490e0a8cfbef90194ca9fcec0d9ce52e">removeExtraVerts</a> (layer)</td></tr>
+<tr class="memdesc:a490e0a8cfbef90194ca9fcec0d9ce52e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the overlapping vertices on all layers.  <a href="namespaceimport__pcb.html#a490e0a8cfbef90194ca9fcec0d9ce52e">More...</a><br /></td></tr>
+<tr class="separator:a490e0a8cfbef90194ca9fcec0d9ce52e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca0fc0eccd4002a5a2152c58365de759"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#aca0fc0eccd4002a5a2152c58365de759">removeOutline</a> (layer)</td></tr>
+<tr class="memdesc:aca0fc0eccd4002a5a2152c58365de759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the vertex closest to the origin (that has to be in the board outline) and removes all the vertices connected to it.  <a href="namespaceimport__pcb.html#aca0fc0eccd4002a5a2152c58365de759">More...</a><br /></td></tr>
+<tr class="separator:aca0fc0eccd4002a5a2152c58365de759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a83d1f2f277497ca4337b9e0e4c2015"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a0a83d1f2f277497ca4337b9e0e4c2015">extrudeLayers</a> ()</td></tr>
+<tr class="memdesc:a0a83d1f2f277497ca4337b9e0e4c2015"><td class="mdescLeft">&#160;</td><td class="mdescRight">extrudes all components and sets the vertical position of each layer  <a href="namespaceimport__pcb.html#a0a83d1f2f277497ca4337b9e0e4c2015">More...</a><br /></td></tr>
+<tr class="separator:a0a83d1f2f277497ca4337b9e0e4c2015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3060bb85e91d40f76f8b5d0f4b15af6d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a3060bb85e91d40f76f8b5d0f4b15af6d">apply_materials</a> ()</td></tr>
+<tr class="memdesc:a3060bb85e91d40f76f8b5d0f4b15af6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a starting material (base-color, mettalic, specular_intensity, and roughness) for each of the layers of the PCB and applies said material<br  />
+ Final version of project will probably have this overloaded to accept rgba values for the base colorings and tint of the metal, for now it's:<br  />
+ green circuit board<br  />
+ metallic trace layers and outside solder masks<br  />
+ off-white silk-screen<br  />
+.  <a href="namespaceimport__pcb.html#a3060bb85e91d40f76f8b5d0f4b15af6d">More...</a><br /></td></tr>
+<tr class="separator:a3060bb85e91d40f76f8b5d0f4b15af6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc450976a236f1fd034f8aa76ceae47b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#afc450976a236f1fd034f8aa76ceae47b">solidify</a> ()</td></tr>
+<tr class="memdesc:afc450976a236f1fd034f8aa76ceae47b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a thickness to the 2d (extruded along z by this point) curves representing the traces for the top and bottom layer in the PCB.  <a href="namespaceimport__pcb.html#afc450976a236f1fd034f8aa76ceae47b">More...</a><br /></td></tr>
+<tr class="separator:afc450976a236f1fd034f8aa76ceae47b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15120d4dc255543506f4242aaf9d194c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a15120d4dc255543506f4242aaf9d194c">drill</a> ()</td></tr>
+<tr class="memdesc:a15120d4dc255543506f4242aaf9d194c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the connection holes through the layers in the PCB.  <a href="namespaceimport__pcb.html#a15120d4dc255543506f4242aaf9d194c">More...</a><br /></td></tr>
+<tr class="separator:a15120d4dc255543506f4242aaf9d194c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3925844ed7611998fa61589e26d872a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#ab3925844ed7611998fa61589e26d872a">harden</a> ()</td></tr>
+<tr class="memdesc:ab3925844ed7611998fa61589e26d872a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicates all component layers in the pcb and joins them into a single object.  <a href="namespaceimport__pcb.html#ab3925844ed7611998fa61589e26d872a">More...</a><br /></td></tr>
+<tr class="separator:ab3925844ed7611998fa61589e26d872a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa694d68698020c79305a954297efd88d"><td class="memItemLeft" align="right" valign="top">dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#aa694d68698020c79305a954297efd88d">bl_info</a></td></tr>
+<tr class="separator:aa694d68698020c79305a954297efd88d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a3060bb85e91d40f76f8b5d0f4b15af6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3060bb85e91d40f76f8b5d0f4b15af6d">&#9670;&nbsp;</a></span>apply_materials()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def import_pcb.apply_materials </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates a starting material (base-color, mettalic, specular_intensity, and roughness) for each of the layers of the PCB and applies said material<br  />
+ Final version of project will probably have this overloaded to accept rgba values for the base colorings and tint of the metal, for now it's:<br  />
+ green circuit board<br  />
+ metallic trace layers and outside solder masks<br  />
+ off-white silk-screen<br  />
+. </p>
+
+</div>
+</div>
+<a id="a15120d4dc255543506f4242aaf9d194c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15120d4dc255543506f4242aaf9d194c">&#9670;&nbsp;</a></span>drill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def import_pcb.drill </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates the connection holes through the layers in the PCB. </p>
+
+</div>
+</div>
+<a id="a0a83d1f2f277497ca4337b9e0e4c2015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a83d1f2f277497ca4337b9e0e4c2015">&#9670;&nbsp;</a></span>extrudeLayers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def import_pcb.extrudeLayers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>extrudes all components and sets the vertical position of each layer </p>
+
+</div>
+</div>
+<a id="ab3925844ed7611998fa61589e26d872a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3925844ed7611998fa61589e26d872a">&#9670;&nbsp;</a></span>harden()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def import_pcb.harden </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Duplicates all component layers in the pcb and joins them into a single object. </p>
+<p>It then moves this object out of the layers collection and into the primary collection. The single board is placed at the origin with a geometry-centralized local origin and the layered board is moved off to the side </p>
+
+</div>
+</div>
+<a id="a1da7eebfd473fa3b364696edfca1712d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1da7eebfd473fa3b364696edfca1712d">&#9670;&nbsp;</a></span>hideAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def import_pcb.hideAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turns visibility off for all objects <br  />
+ </p>
+
+</div>
+</div>
 <a id="ad874a884b9cd1fb709c6f50e7e39af93"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad874a884b9cd1fb709c6f50e7e39af93">&#9670;&nbsp;</a></span>import_svg()</h2>
 
@@ -117,6 +261,87 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adds this class to the list the bpy module knows about, necessary to run it<br  />
+ in later versions register it to whichever menu or panel it will be called from. </p>
+
+</div>
+</div>
+<a id="a490e0a8cfbef90194ca9fcec0d9ce52e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a490e0a8cfbef90194ca9fcec0d9ce52e">&#9670;&nbsp;</a></span>removeExtraVerts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def import_pcb.removeExtraVerts </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>layer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes the overlapping vertices on all layers. </p>
+
+</div>
+</div>
+<a id="aca0fc0eccd4002a5a2152c58365de759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca0fc0eccd4002a5a2152c58365de759">&#9670;&nbsp;</a></span>removeOutline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def import_pcb.removeOutline </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>layer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds the vertex closest to the origin (that has to be in the board outline) and removes all the vertices connected to it. </p>
+
+</div>
+</div>
+<a id="acf30af908be47ae889eccd976ffa4f52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf30af908be47ae889eccd976ffa4f52">&#9670;&nbsp;</a></span>revealAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def import_pcb.revealAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turns on all objects which are part of the PCB, this excludes the drill_holes tool object. </p>
+
+</div>
+</div>
+<a id="afc450976a236f1fd034f8aa76ceae47b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc450976a236f1fd034f8aa76ceae47b">&#9670;&nbsp;</a></span>solidify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def import_pcb.solidify </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies a thickness to the 2d (extruded along z by this point) curves representing the traces for the top and bottom layer in the PCB. </p>
+
 </div>
 </div>
 <a id="a139c0f086c0befca66e8969c353889fc"></a>
@@ -134,6 +359,34 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Removes this class from the list the bpy module knows about. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="aa694d68698020c79305a954297efd88d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa694d68698020c79305a954297efd88d">&#9670;&nbsp;</a></span>bl_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dictionary import_pcb.bl_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;=  {</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="stringliteral">&quot;name&quot;</span>: <span class="stringliteral">&quot;Generate PCB Model&quot;</span>,</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="stringliteral">&quot;author&quot;</span>: <span class="stringliteral">&quot;Christopher S. Francis&quot;</span>,</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="stringliteral">&quot;version&quot;</span>: (1, 0),</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="stringliteral">&quot;blender&quot;</span>: (2, 80, 3),</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="stringliteral">&quot;location&quot;</span>: <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="stringliteral">&quot;description&quot;</span>: <span class="stringliteral">&quot;Imports layers from a Gerber file package in SVG form and generates a model of the given PCB to allow for 3D inspection before ordering&quot;</span>,</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="stringliteral">&quot;warning&quot;</span>: <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="stringliteral">&quot;wiki_url&quot;</span>: <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="stringliteral">&quot;category&quot;</span>: <span class="stringliteral">&quot;Add PCB Object&quot;</span>,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
