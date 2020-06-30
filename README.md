@@ -1,5 +1,5 @@
 # GerberToBlender
-A plugin for Blender 3D modeling software which (when completed) will import SVG exports of a Gerber file into an accurate virtual model of the PCB. 
+A plugin for Blender 3D modeling software which will import SVG exports of a Gerber file into an accurate virtual model of the PCB. 
 
 I had two reasons for making this.
 
