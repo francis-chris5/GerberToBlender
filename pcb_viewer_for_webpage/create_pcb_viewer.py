@@ -22,7 +22,7 @@ with open("filenames.txt", "r") as fromFile:
 
 # put in the checkboxes to display the layers
 for layer in layerNames:
-    tags.append("<p><button onclick=\"Display('" + layer[0:-4] + "')\">" + layer[0:-4] + "</button></p>")
+    tags.append("<p><input type=\"checkbox\" onchange=\"Display('" + layer[0:-4] + "')\"  checked=\"checked\">" + layer[0:-4] + "</p>")
 tags.append("</section>")
 tags.append("<section class=\"viewport\">")
 
