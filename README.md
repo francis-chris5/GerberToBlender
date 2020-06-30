@@ -7,7 +7,7 @@ First off, I want to start 3d-printing out cases for some of my Arduino or Rasbe
 
 Secondly, sometimes I feel that the 2D layout is not suffecient for examining a PCB before placing the order -I recently got one in with a tiny mistake (I left the pads for resistors and transitors from the SMT in the PCB I planned to solder by hand for a prototype). I would have caught that easily in a 3D virtual model, and now have to wait a couple weeks for the corrected design -I'm not paying rapid shipping rates for two dollars worth of PCB's to come from China.
 
-I figure I'm not the only one who does this stuff with Arduino or Rasberry Pi project so I'd share it on here.
+I figure I'm not the only one who does this stuff with my Arduino or Rasberry Pi projects so I'd share it on here.
 
 Current Instructions:
 <blockquote>
