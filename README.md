@@ -22,6 +22,18 @@ Current Instructions:
 
 A video walking through these instructions can be found at https://youtu.be/a3hJ6541-y0
 
+Since I mentioned that I use these svg files to generate a gerber viewer in webpage documentation, figured I would go ahead and include that here too. Instructions:
+
+<blockquote>
+  
+put all layers of a pcb into a folder named like those listed in filenames.txt
+  
+include filenames.txt and create_pcb_viewer.py in the folder
+  
+run create_pcb_viewer.py and embed, or copy, the result into the webpage documentation
+  
+</blockquote>
+
 
 
 The testing so far was PCB created with EasyEDA online PCB editing software, SVG files exported from GerbV 2.7 Gerber Viewer Software, and scripted with Blender 2.8.3 API.
