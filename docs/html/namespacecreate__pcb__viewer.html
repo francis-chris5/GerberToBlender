@@ -48,12 +48,16 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ab1da73d766bdc6bc17162fd6545fb891"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecreate__pcb__viewer.html#ab1da73d766bdc6bc17162fd6545fb891">tags</a> = [&quot;&lt;!DOCTYPE html&gt;&quot;, &quot;&lt;html&gt;&quot;, &quot;&lt;head&gt;&quot;, &quot;&lt;style&gt;&quot;, &quot;.controls{&quot;, &quot;width: 20%;&quot;, &quot;float: left;&quot;, &quot;text-align: right;&quot;, &quot;}&quot;, &quot;.viewport{&quot;, &quot;width: 75%;&quot;, &quot;}&quot; &quot;svg{&quot;,&quot;background-color: #212121;&quot;, &quot;margin: 2.4em;&quot;, &quot;}&quot;, &quot;&lt;/style&gt;&quot;, &quot;&lt;/head&gt;&quot;, &quot;&lt;body onload=\&quot;setDisplay()\&quot;&gt;&quot;, &quot;&lt;section class=\&quot;controls\&quot;&gt;&quot;]</td></tr>
+<tr class="memdesc:ab1da73d766bdc6bc17162fd6545fb891"><td class="mdescLeft">&#160;</td><td class="mdescRight">list to build up with html 5.1 code with each "readable" line as the elements to be written to a file one list element at a time.  <a href="namespacecreate__pcb__viewer.html#ab1da73d766bdc6bc17162fd6545fb891">More...</a><br /></td></tr>
 <tr class="separator:ab1da73d766bdc6bc17162fd6545fb891"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a211b5f1adb44becedb68e906939ead44"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecreate__pcb__viewer.html#a211b5f1adb44becedb68e906939ead44">layerNames</a> = []</td></tr>
+<tr class="memdesc:a211b5f1adb44becedb68e906939ead44"><td class="mdescLeft">&#160;</td><td class="mdescRight">list holding the names of the .svg files to bring into the webpage, read from the file <a class="el" href="filenames_8txt.html">filenames.txt</a>  <a href="namespacecreate__pcb__viewer.html#a211b5f1adb44becedb68e906939ead44">More...</a><br /></td></tr>
 <tr class="separator:a211b5f1adb44becedb68e906939ead44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5db9dad9734f2fe2a1bf7efe2f80ba9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecreate__pcb__viewer.html#ae5db9dad9734f2fe2a1bf7efe2f80ba9">isReading</a> = False</td></tr>
+<tr class="memdesc:ae5db9dad9734f2fe2a1bf7efe2f80ba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">boolean value to control when it starts and stops reading from the .svg files  <a href="namespacecreate__pcb__viewer.html#ae5db9dad9734f2fe2a1bf7efe2f80ba9">More...</a><br /></td></tr>
 <tr class="separator:ae5db9dad9734f2fe2a1bf7efe2f80ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a820f8d56add3ca2379ff22999b09c203"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecreate__pcb__viewer.html#a820f8d56add3ca2379ff22999b09c203">toFile</a> = open(&quot;pcb.html&quot;, &quot;w&quot;)</td></tr>
+<tr class="memdesc:a820f8d56add3ca2379ff22999b09c203"><td class="mdescLeft">&#160;</td><td class="mdescRight">File handler to write the elements in the tags list to the file pcb.html.  <a href="namespacecreate__pcb__viewer.html#a820f8d56add3ca2379ff22999b09c203">More...</a><br /></td></tr>
 <tr class="separator:a820f8d56add3ca2379ff22999b09c203"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -69,6 +73,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>boolean value to control when it starts and stops reading from the .svg files </p>
+
 </div>
 </div>
 <a id="a211b5f1adb44becedb68e906939ead44"></a>
@@ -83,6 +89,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>list holding the names of the .svg files to bring into the webpage, read from the file <a class="el" href="filenames_8txt.html">filenames.txt</a> </p>
+
 </div>
 </div>
 <a id="ab1da73d766bdc6bc17162fd6545fb891"></a>
@@ -96,9 +104,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<h1><a class="anchor" id="description"></a>
-description</h1>
-<p>Imports svg files exported from GerberV 2.7 and assembles a webpage for documenting the pcb with the ability to turn layers on and off with the toggling of a checkbox </p>
+
+<p>list to build up with html 5.1 code with each "readable" line as the elements to be written to a file one list element at a time. </p>
 
 </div>
 </div>
@@ -113,6 +120,9 @@ description</h1>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>File handler to write the elements in the tags list to the file pcb.html. </p>
+<p>This file will likely need renamed to go into particular projects, or the code can be embedded or copied and pasted into the webpage it actually goes in. </p>
 
 </div>
 </div>

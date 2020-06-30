@@ -85,20 +85,16 @@ Functions</h2></td></tr>
 <tr class="memitem:a0a83d1f2f277497ca4337b9e0e4c2015"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a0a83d1f2f277497ca4337b9e0e4c2015">extrudeLayers</a> ()</td></tr>
 <tr class="memdesc:a0a83d1f2f277497ca4337b9e0e4c2015"><td class="mdescLeft">&#160;</td><td class="mdescRight">extrudes all components and sets the vertical position of each layer  <a href="namespaceimport__pcb.html#a0a83d1f2f277497ca4337b9e0e4c2015">More...</a><br /></td></tr>
 <tr class="separator:a0a83d1f2f277497ca4337b9e0e4c2015"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3060bb85e91d40f76f8b5d0f4b15af6d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a3060bb85e91d40f76f8b5d0f4b15af6d">apply_materials</a> ()</td></tr>
-<tr class="memdesc:a3060bb85e91d40f76f8b5d0f4b15af6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a starting material (base-color, mettalic, specular_intensity, and roughness) for each of the layers of the PCB and applies said material<br  />
- Final version of project will probably have this overloaded to accept rgba values for the base colorings and tint of the metal, for now it's:<br  />
- green circuit board<br  />
- metallic trace layers and outside solder masks<br  />
- off-white silk-screen<br  />
-.  <a href="namespaceimport__pcb.html#a3060bb85e91d40f76f8b5d0f4b15af6d">More...</a><br /></td></tr>
-<tr class="separator:a3060bb85e91d40f76f8b5d0f4b15af6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc450976a236f1fd034f8aa76ceae47b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#afc450976a236f1fd034f8aa76ceae47b">solidify</a> ()</td></tr>
-<tr class="memdesc:afc450976a236f1fd034f8aa76ceae47b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a thickness to the 2d (extruded along z by this point) curves representing the traces for the top and bottom layer in the PCB.  <a href="namespaceimport__pcb.html#afc450976a236f1fd034f8aa76ceae47b">More...</a><br /></td></tr>
-<tr class="separator:afc450976a236f1fd034f8aa76ceae47b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15120d4dc255543506f4242aaf9d194c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a15120d4dc255543506f4242aaf9d194c">drill</a> ()</td></tr>
-<tr class="memdesc:a15120d4dc255543506f4242aaf9d194c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the connection holes through the layers in the PCB.  <a href="namespaceimport__pcb.html#a15120d4dc255543506f4242aaf9d194c">More...</a><br /></td></tr>
-<tr class="separator:a15120d4dc255543506f4242aaf9d194c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fe894d2eff3f9b216f4b1feaf959037"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a8fe894d2eff3f9b216f4b1feaf959037">create_material</a> (layer, name=&quot;material_name&quot;, rgba=(0.0, 0.0, 0.0, 1.0), metallic=0.5, specular=0.5, roughness=0.5)</td></tr>
+<tr class="memdesc:a8fe894d2eff3f9b216f4b1feaf959037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a starting material (base-color, mettalic, specular_intensity, and roughness) for each of the layers of the PCB and applies said material<br  />
+.  <a href="namespaceimport__pcb.html#a8fe894d2eff3f9b216f4b1feaf959037">More...</a><br /></td></tr>
+<tr class="separator:a8fe894d2eff3f9b216f4b1feaf959037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a518ef11704067fc198c4998bdd144329"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a518ef11704067fc198c4998bdd144329">solidify</a> (layer_name, thickness)</td></tr>
+<tr class="memdesc:a518ef11704067fc198c4998bdd144329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a thickness to the 2d (extruded along z by this point) curves representing the traces for the top and bottom layer in the PCB.  <a href="namespaceimport__pcb.html#a518ef11704067fc198c4998bdd144329">More...</a><br /></td></tr>
+<tr class="separator:a518ef11704067fc198c4998bdd144329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12484164ae693e2c88c4a667dfe1d05d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a12484164ae693e2c88c4a667dfe1d05d">drill_layer</a> (layer_name)</td></tr>
+<tr class="memdesc:a12484164ae693e2c88c4a667dfe1d05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">creates a drill hole through an individual layer of the pcb  <a href="namespaceimport__pcb.html#a12484164ae693e2c88c4a667dfe1d05d">More...</a><br /></td></tr>
+<tr class="separator:a12484164ae693e2c88c4a667dfe1d05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3925844ed7611998fa61589e26d872a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#ab3925844ed7611998fa61589e26d872a">harden</a> ()</td></tr>
 <tr class="memdesc:ab3925844ed7611998fa61589e26d872a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicates all component layers in the pcb and joins them into a single object.  <a href="namespaceimport__pcb.html#ab3925844ed7611998fa61589e26d872a">More...</a><br /></td></tr>
 <tr class="separator:ab3925844ed7611998fa61589e26d872a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,46 +105,95 @@ Variables</h2></td></tr>
 <tr class="separator:aa694d68698020c79305a954297efd88d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a3060bb85e91d40f76f8b5d0f4b15af6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3060bb85e91d40f76f8b5d0f4b15af6d">&#9670;&nbsp;</a></span>apply_materials()</h2>
+<a id="a8fe894d2eff3f9b216f4b1feaf959037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fe894d2eff3f9b216f4b1feaf959037">&#9670;&nbsp;</a></span>create_material()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def import_pcb.apply_materials </td>
+          <td class="memname">def import_pcb.create_material </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>layer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;material_name&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>rgba</em> = <code>(0.0,&#160;0.0,&#160;0.0,&#160;1.0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>metallic</em> = <code>0.5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>specular</em> = <code>0.5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>roughness</em> = <code>0.5</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Generates a starting material (base-color, mettalic, specular_intensity, and roughness) for each of the layers of the PCB and applies said material<br  />
- Final version of project will probably have this overloaded to accept rgba values for the base colorings and tint of the metal, for now it's:<br  />
- green circuit board<br  />
- metallic trace layers and outside solder masks<br  />
- off-white silk-screen<br  />
 . </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>-the object to which the material will be applied </td></tr>
+    <tr><td class="paramname">name</td><td>-string of a unique name for the material </td></tr>
+    <tr><td class="paramname">rgba</td><td>-a tuple of floats representing the red-green-blue-alpha value for the base coloring </td></tr>
+    <tr><td class="paramname">metallic</td><td>-a float for the percentage of metallic texture </td></tr>
+    <tr><td class="paramname">specular</td><td>-a float for the percentage of specular-intensity (reflected light) </td></tr>
+    <tr><td class="paramname">roughness</td><td>-a float for the percentage of roughness in the texture (surface divisions for specular intensity) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a15120d4dc255543506f4242aaf9d194c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15120d4dc255543506f4242aaf9d194c">&#9670;&nbsp;</a></span>drill()</h2>
+<a id="a12484164ae693e2c88c4a667dfe1d05d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12484164ae693e2c88c4a667dfe1d05d">&#9670;&nbsp;</a></span>drill_layer()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def import_pcb.drill </td>
+          <td class="memname">def import_pcb.drill_layer </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>layer_name</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates the connection holes through the layers in the PCB. </p>
+<p>creates a drill hole through an individual layer of the pcb </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">layer_name</td><td>-the layer to drill the holes in </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -328,8 +373,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="afc450976a236f1fd034f8aa76ceae47b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc450976a236f1fd034f8aa76ceae47b">&#9670;&nbsp;</a></span>solidify()</h2>
+<a id="a518ef11704067fc198c4998bdd144329"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a518ef11704067fc198c4998bdd144329">&#9670;&nbsp;</a></span>solidify()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -337,13 +382,31 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">def import_pcb.solidify </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>layer_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>thickness</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Applies a thickness to the 2d (extruded along z by this point) curves representing the traces for the top and bottom layer in the PCB. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">layer</td><td>-string name of the layer of the board to apply modifier to </td></tr>
+    <tr><td class="paramname">thickness</td><td>-the width of the trace in the design </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

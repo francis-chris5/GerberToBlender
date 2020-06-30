@@ -57,9 +57,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classimport__pcb_1_1_error_dialog.html">import_pcb.ErrorDialog</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dialog box to handle error messages.  <a href="classimport__pcb_1_1_error_dialog.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classimport__pcb_1_1_error_dialog.html">import_pcb.ErrorDialog</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dialog box to handle error messages.  <a href="classimport__pcb_1_1_error_dialog.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -94,20 +91,16 @@ Functions</h2></td></tr>
 <tr class="memitem:a0a83d1f2f277497ca4337b9e0e4c2015"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a0a83d1f2f277497ca4337b9e0e4c2015">import_pcb.extrudeLayers</a> ()</td></tr>
 <tr class="memdesc:a0a83d1f2f277497ca4337b9e0e4c2015"><td class="mdescLeft">&#160;</td><td class="mdescRight">extrudes all components and sets the vertical position of each layer  <a href="namespaceimport__pcb.html#a0a83d1f2f277497ca4337b9e0e4c2015">More...</a><br /></td></tr>
 <tr class="separator:a0a83d1f2f277497ca4337b9e0e4c2015"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3060bb85e91d40f76f8b5d0f4b15af6d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a3060bb85e91d40f76f8b5d0f4b15af6d">import_pcb.apply_materials</a> ()</td></tr>
-<tr class="memdesc:a3060bb85e91d40f76f8b5d0f4b15af6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a starting material (base-color, mettalic, specular_intensity, and roughness) for each of the layers of the PCB and applies said material<br  />
- Final version of project will probably have this overloaded to accept rgba values for the base colorings and tint of the metal, for now it's:<br  />
- green circuit board<br  />
- metallic trace layers and outside solder masks<br  />
- off-white silk-screen<br  />
-.  <a href="namespaceimport__pcb.html#a3060bb85e91d40f76f8b5d0f4b15af6d">More...</a><br /></td></tr>
-<tr class="separator:a3060bb85e91d40f76f8b5d0f4b15af6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc450976a236f1fd034f8aa76ceae47b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#afc450976a236f1fd034f8aa76ceae47b">import_pcb.solidify</a> ()</td></tr>
-<tr class="memdesc:afc450976a236f1fd034f8aa76ceae47b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a thickness to the 2d (extruded along z by this point) curves representing the traces for the top and bottom layer in the PCB.  <a href="namespaceimport__pcb.html#afc450976a236f1fd034f8aa76ceae47b">More...</a><br /></td></tr>
-<tr class="separator:afc450976a236f1fd034f8aa76ceae47b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15120d4dc255543506f4242aaf9d194c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a15120d4dc255543506f4242aaf9d194c">import_pcb.drill</a> ()</td></tr>
-<tr class="memdesc:a15120d4dc255543506f4242aaf9d194c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the connection holes through the layers in the PCB.  <a href="namespaceimport__pcb.html#a15120d4dc255543506f4242aaf9d194c">More...</a><br /></td></tr>
-<tr class="separator:a15120d4dc255543506f4242aaf9d194c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fe894d2eff3f9b216f4b1feaf959037"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a8fe894d2eff3f9b216f4b1feaf959037">import_pcb.create_material</a> (layer, name=&quot;material_name&quot;, rgba=(0.0, 0.0, 0.0, 1.0), metallic=0.5, specular=0.5, roughness=0.5)</td></tr>
+<tr class="memdesc:a8fe894d2eff3f9b216f4b1feaf959037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a starting material (base-color, mettalic, specular_intensity, and roughness) for each of the layers of the PCB and applies said material<br  />
+.  <a href="namespaceimport__pcb.html#a8fe894d2eff3f9b216f4b1feaf959037">More...</a><br /></td></tr>
+<tr class="separator:a8fe894d2eff3f9b216f4b1feaf959037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a518ef11704067fc198c4998bdd144329"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a518ef11704067fc198c4998bdd144329">import_pcb.solidify</a> (layer_name, thickness)</td></tr>
+<tr class="memdesc:a518ef11704067fc198c4998bdd144329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a thickness to the 2d (extruded along z by this point) curves representing the traces for the top and bottom layer in the PCB.  <a href="namespaceimport__pcb.html#a518ef11704067fc198c4998bdd144329">More...</a><br /></td></tr>
+<tr class="separator:a518ef11704067fc198c4998bdd144329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12484164ae693e2c88c4a667dfe1d05d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#a12484164ae693e2c88c4a667dfe1d05d">import_pcb.drill_layer</a> (layer_name)</td></tr>
+<tr class="memdesc:a12484164ae693e2c88c4a667dfe1d05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">creates a drill hole through an individual layer of the pcb  <a href="namespaceimport__pcb.html#a12484164ae693e2c88c4a667dfe1d05d">More...</a><br /></td></tr>
+<tr class="separator:a12484164ae693e2c88c4a667dfe1d05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3925844ed7611998fa61589e26d872a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceimport__pcb.html#ab3925844ed7611998fa61589e26d872a">import_pcb.harden</a> ()</td></tr>
 <tr class="memdesc:ab3925844ed7611998fa61589e26d872a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicates all component layers in the pcb and joins them into a single object.  <a href="namespaceimport__pcb.html#ab3925844ed7611998fa61589e26d872a">More...</a><br /></td></tr>
 <tr class="separator:ab3925844ed7611998fa61589e26d872a"><td class="memSeparator" colspan="2">&#160;</td></tr>
