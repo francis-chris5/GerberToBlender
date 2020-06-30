@@ -71,14 +71,31 @@ class ImportPCB(Operator, ImportHelper):
                 else:
                     removeExtraVerts(layer)
 
-
             extrudeLayers()
             
-            apply_materials()
+            for layer in bpy.data.objects:
+                if layer.name == "board_outline":
+                    create_material(layer, "board", (0.062, 0.296, 0.020, 0.99), 0.234, 0.235, 0.202) 
+                elif layer.name == "bottom_solder":
+                    create_material(layer, "metal", (0.391, 0.521, 0.627, 1.0), 0.849, 0.279, 0.245)
+                elif layer.name == "bottom_layer":
+                    create_material(layer, "metal", (0.391, 0.521, 0.627, 1.0), 0.849, 0.279, 0.245)
+                elif layer.name == "top_layer":
+                    create_material(layer, "metal", (0.391, 0.521, 0.627, 1.0), 0.849, 0.279, 0.245)
+                elif layer.name == "top_solder":
+                    create_material(layer, "metal", (0.391, 0.521, 0.627, 1.0), 0.849, 0.279, 0.245)
+                elif layer.name == "silk_screen":
+                    create_material(layer, "silk_screen", (0.513, 0.627, 0.552, 1.0), 0.234, 0.500, 0.202)
             
-            solidify()
+            solidify("bottom_layer", 0.254)
+            solidify("top_layer", 0.254)
             
-            drill()
+            drill_layer("board_outline")
+            drill_layer("bottom_solder")
+            drill_layer("bottom_layer")
+            drill_layer("top_layer")
+            drill_layer("top_solder")
+            drill_layer("silk_screen")
             
             harden()
         except:
@@ -89,23 +106,6 @@ class ImportPCB(Operator, ImportHelper):
 
 
 
-##
-# Dialog box to handle error messages
-class ErrorDialog(Operator):
-    bl_idname = "pcb.import_error"
-    bl_label = "Import PCB Error"
-    
-    message = "An error occurred, please make sure all required files are in the selected folder and try again."
-    
-    
-    def execute(self, context):
-        
-        return {"FINISHED"}
-    
-    
-    def invoke(self, context, event):
-        return context.window_manager.invoke_props_dialog(self)
-    
 
 
 ##
@@ -117,12 +117,15 @@ class ErrorDialog(Operator):
     text = StringProperty(name="An Error Occurred", default="Please Try Again")
     
     def execute(self, context):
-        return {"FINISHED"}
-    
+        return {"FINISHED"}    
     
     def invoke(self, context, event):
         return context.window_manager.invoke_props_dialog(self)
-    
+
+
+
+
+
 
     
 ##
@@ -131,6 +134,12 @@ class ErrorDialog(Operator):
 def register():
     bpy.utils.register_class(ImportPCB)
     bpy.utils.register_class(ErrorDialog)
+
+
+
+
+
+
 
 ##
 # Removes this class from the list the bpy module knows about 
@@ -227,6 +236,9 @@ def removeExtraVerts(layer):
 
 
 
+
+
+
 ##
 # Finds the vertex closest to the origin \(that has to be in the board outline\) and removes all the vertices connected to it.
 def removeOutline(layer):
@@ -244,6 +256,9 @@ def removeOutline(layer):
     bpy.ops.mesh.delete(type="VERT")
     bpy.ops.object.editmode_toggle()
     
+
+
+
 
 
 ##
@@ -296,7 +311,7 @@ def extrudeLayers():
             bpy.context.view_layer.objects.active = layer
             bpy.ops.object.editmode_toggle()
             bpy.ops.mesh.select_all(action="SELECT")
-            bpy.ops.mesh.extrude_region_move(MESH_OT_extrude_region={"use_normal_flip":False, "mirror":False}, TRANSFORM_OT_translate={"value":Vector((0.1, 0.1, 0))})
+            bpy.ops.mesh.extrude_region_move(MESH_OT_extrude_region={"use_normal_flip":False, "mirror":False}, TRANSFORM_OT_translate={"value":Vector((0.2, 0.2, 0))})
             bpy.ops.object.editmode_toggle()
             layer.location.z = 2.41
         elif layer.name == "drill_holes":
@@ -313,119 +328,45 @@ def extrudeLayers():
 
 
 
+
+
+
+
+
 ##
 # Generates a starting material \(base-color, mettalic, specular_intensity, and roughness\) for each of the layers of the PCB and applies said material\n
-# Final version of project will probably have this overloaded to accept rgba values for the base colorings and tint of the metal, for now it's:\n
-# green circuit board\n
-# metallic trace layers and outside solder masks\n
-# off-white silk-screen\n
-def apply_materials():
-    context = bpy.context
-    scene = context.scene
-
-    # make sure computer thinks the mouse is in the right location, avoid ...poll() errors.
-    # this isn't working in a method with the enum passed in???
-    for area in context.screen.areas: 
+# @param object -the object to which the material will be applied
+# @param name -string of a unique name for the material
+# @param rgba -a tuple of floats representing the red-green-blue-alpha value for the base coloring
+# @param metallic -a float for the percentage of metallic texture
+# @param specular -a float for the percentage of specular-intensity \(reflected light\)
+# @param roughness -a float for the percentage of roughness in the texture \(surface divisions for specular intensity\)
+def create_material(layer, name="material_name", rgba=(0.0, 0.0, 0.0, 1.0), metallic=0.5, specular=0.5, roughness=0.5):
+       # make sure computer thinks the mouse is in the right location, avoid ...poll() errors.
+    for area in bpy.context.screen.areas: 
         if area.type == "VIEW_3D":
             for space in area.spaces: 
                 if space.type == "VIEW_3D":
                     space.shading.type = "MATERIAL"
 
-    
-    hideAll()
-        
+    bpy.context.view_layer.objects.active = layer
+    material = bpy.data.materials.new(name)
+    material.diffuse_color = rgba
+    material.metallic = metallic
+    material.specular_intensity = specular
+    material.roughness = roughness
+    layer.data.materials.append(material)
+                    
+    for area in bpy.context.screen.areas: 
+        if area.type == "VIEW_3D":
+            for space in area.spaces: 
+                if space.type == "VIEW_3D":
+                    space.shading.type = "SOLID"
 
-    # loop through all objects and apply the material
-    for layer in bpy.data.objects:
-        if layer.name == "board_outline":
-            layer.hide_set(False)
-            layer.select_set(True)
-            object = bpy.context.selected_objects[0]
-            data = object.data
-            material = bpy.data.materials.new("board")
-            material.diffuse_color = (0.062, 0.296, 0.020, 0.99)
-            data.materials.append(material)
-            object.active_material.metallic = 0.234
-            object.active_material.roughness = 0.20
-            layer.select_set(False)
-            layer.hide_set(True)
-            
-            
-        elif layer.name == "bottom_solder":
-            layer.hide_set(False)
-            layer.select_set(True)
-            object = bpy.context.selected_objects[0]
-            data = object.data
-            material = bpy.data.materials.new("metal")
-            material.diffuse_color = (0.391, 0.521, 0.627, 1.0)
-            data.materials.append(material)
-            object.active_material.metallic = 0.849
-            object.active_material.specular_intensity = 0.279
-            object.active_material.roughness = 0.245
-            layer.select_set(False)
-            layer.hide_set(True)
-            
-            
-        elif layer.name == "bottom_layer":
-            layer.hide_set(False)
-            layer.select_set(True)
-            object = bpy.context.selected_objects[0]
-            data = object.data
-            material = bpy.data.materials.new("metal")
-            material.diffuse_color = (0.391, 0.521, 0.627, 1.0)
-            data.materials.append(material)
-            object.active_material.metallic = 0.849
-            object.active_material.specular_intensity = 0.279
-            object.active_material.roughness = 0.245
-            layer.select_set(False)
-            layer.hide_set(True)
-            
-            
-        elif layer.name == "top_layer":
-            layer.hide_set(False)
-            layer.select_set(True)
-            object = bpy.context.selected_objects[0]
-            data = object.data
-            material = bpy.data.materials.new("metal")
-            material.diffuse_color = (0.391, 0.521, 0.627, 1.0)
-            data.materials.append(material)
-            object.active_material.metallic = 0.849
-            object.active_material.specular_intensity = 0.279
-            object.active_material.roughness = 0.245
-            layer.select_set(False)
-            layer.hide_set(True)
-            
-            
-        elif layer.name == "top_solder":
-            layer.hide_set(False)
-            layer.select_set(True)
-            object = bpy.context.selected_objects[0]
-            data = object.data
-            material = bpy.data.materials.new("metal")
-            material.diffuse_color = (0.391, 0.521, 0.627, 1.0)
-            data.materials.append(material)
-            object.active_material.metallic = 0.849
-            object.active_material.specular_intensity = 0.279
-            object.active_material.roughness = 0.245
-            layer.select_set(False)
-            layer.hide_set(True)
-            
-            
-        elif layer.name == "silk_screen":
-            layer.hide_set(False)
-            layer.select_set(True)
-            object = bpy.context.selected_objects[0]
-            data = object.data
-            material = bpy.data.materials.new("silk_screen")
-            material.diffuse_color = (0.513, 0.627, 0.552, 1.0)
-            data.materials.append(material)
-            object.active_material.metallic = 0.234
-            object.active_material.roughness = 0.20
-            layer.select_set(False)
-            layer.hide_set(True)
-        
-        
-    revealAll()
+
+
+
+
 
 
 
@@ -433,105 +374,48 @@ def apply_materials():
 
 ##
 # Applies a thickness to the 2d \(extruded along z by this point\) curves representing the traces for the top and bottom layer in the PCB
-def solidify():
-    context = bpy.context
-    scene = context.scene
-
-    for area in context.screen.areas: 
+# @param layer -string name of the layer of the board to apply modifier to
+# @param thickness -the width of the trace in the design
+def solidify(layer_name, thickness):
+    for area in bpy.context.screen.areas: 
         if area.type == "VIEW_3D":
             for space in area.spaces: 
                 if space.type == "VIEW_3D":
                     space.shading.type = "SOLID"
-    hideAll()
 
-
-    bottom = bpy.data.objects["bottom_layer"]
-    modifier = bottom.modifiers.new(name="Solidify", type="SOLIDIFY")
-    modifier.thickness = 0.254
-    context.view_layer.objects.active = bottom
+    layer = bpy.data.objects[layer_name]
+    modifier = layer.modifiers.new(name="Solidify", type="SOLIDIFY")
+    modifier.thickness = thickness
+    bpy.context.view_layer.objects.active = layer
     bpy.ops.object.modifier_apply(apply_as="DATA", modifier="Solidify")
-    bottom.select_set(False)
 
 
 
-    top = bpy.data.objects["top_layer"]
-    modifier = top.modifiers.new(name="Solidify", type="SOLIDIFY")
-    modifier.thickness = 0.254
-    context.view_layer.objects.active = top
-    bpy.ops.object.modifier_apply(apply_as="DATA", modifier="Solidify")
-    top.select_set(False)
 
 
-        
-    revealAll()
+
 
 
 
 ##
-# Creates the connection holes through the layers in the PCB
-def drill():
-    context = bpy.context
-    scene = context.scene
-
-
-    for area in context.screen.areas: 
+# creates a drill hole through an individual layer of the pcb
+# @param layer_name -the layer to drill the holes in
+def drill_layer(layer_name):
+    for area in bpy.context.screen.areas: 
         if area.type == "VIEW_3D":
             for space in area.spaces: 
                 if space.type == "VIEW_3D":
                     space.shading.type = "SOLID"
-
-
-
-    hideAll()
-
-    board = bpy.data.objects["board_outline"]
-    modifier = board.modifiers.new(name="Boolean", type="BOOLEAN")
+    
+    layer = bpy.data.objects[layer_name]
+    modifier = layer.modifiers.new(name="Boolean", type="BOOLEAN")
     modifier.object = bpy.data.objects["drill_holes"]
-    context.view_layer.objects.active = board
+    bpy.context.view_layer.objects.active = layer
     bpy.ops.object.modifier_apply(apply_as="DATA", modifier="Boolean")
-    board.select_set(False)
-
-    bSolder = bpy.data.objects["bottom_solder"]
-    modifier = bSolder.modifiers.new(name="Boolean", type="BOOLEAN")
-    modifier.object = bpy.data.objects["drill_holes"]
-    context.view_layer.objects.active = bSolder
-    bpy.ops.object.modifier_apply(apply_as="DATA", modifier="Boolean")
-    bSolder.select_set(False)
 
 
-    bottom = bpy.data.objects["bottom_layer"]
-    modifier = bottom.modifiers.new(name="Boolean", type="BOOLEAN")
-    modifier.object = bpy.data.objects["drill_holes"]
-    context.view_layer.objects.active = bottom
-    bpy.ops.object.modifier_apply(apply_as="DATA", modifier="Boolean")
-    bottom.select_set(False)
 
 
-    top = bpy.data.objects["top_layer"]
-    modifier = top.modifiers.new(name="Boolean", type="BOOLEAN")
-    modifier.object = bpy.data.objects["drill_holes"]
-    context.view_layer.objects.active = top
-    bpy.ops.object.modifier_apply(apply_as="DATA", modifier="Boolean")
-    top.select_set(False)
-
-    tSolder = bpy.data.objects["top_solder"]
-    modifier = tSolder.modifiers.new(name="Boolean", type="BOOLEAN")
-    modifier.object = bpy.data.objects["drill_holes"]
-    context.view_layer.objects.active = tSolder
-    bpy.ops.object.modifier_apply(apply_as="DATA", modifier="Boolean")
-    tSolder.select_set(False)
-
-
-    silk = bpy.data.objects["silk_screen"]
-    modifier = silk.modifiers.new(name="Boolean", type="BOOLEAN")
-    modifier.object = bpy.data.objects["drill_holes"]
-    context.view_layer.objects.active = silk
-    bpy.ops.object.modifier_apply(apply_as="DATA", modifier="Boolean")
-    silk.select_set(False)
-
-
-        
-    revealAll()
 
 
 
@@ -540,22 +424,19 @@ def drill():
 ##
 # Duplicates all component layers in the pcb and joins them into a single object. It then moves this object out of the layers collection and into the primary collection. The single board is placed at the origin with a geometry-centralized local origin and the layered board is moved off to the side
 def harden():
-    context = bpy.context
-    scene = context.scene
-
     revealAll()
 
-    for area in context.screen.areas: 
+    for area in bpy.context.screen.areas: 
         if area.type == "VIEW_3D":
             for space in area.spaces: 
                 if space.type == "VIEW_3D":
-                    space.shading.type = "MATERIAL"
+                    space.shading.type = "SOLID"
 
     bpy.ops.object.select_all(action="SELECT")
     bpy.ops.object.duplicate_move()
     bpy.ops.object.join()
     bpy.ops.object.origin_set(type="ORIGIN_GEOMETRY", center="MEDIAN")
-    board = context.selected_objects[0]
+    board = bpy.context.selected_objects[0]
     board.name = "PCB"
     bpy.data.collections["Collection"].objects.link(board)
     board.location = (0, 0, 0)
