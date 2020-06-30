@@ -1,0 +1,7 @@
+board_outline.svg
+bottom_solder.svg
+bottom_layer.svg
+top_layer.svg
+top_solder.svg
+silk_screen.svg
+drill_holes.svg
