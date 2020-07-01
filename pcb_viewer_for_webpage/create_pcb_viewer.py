@@ -10,7 +10,7 @@
 
 ##
 # list to build up with html 5.1 code with each \"readable\" line as the elements to be written to a file one list element at a time.
-tags = ["<!DOCTYPE html>", "<html>", "<head>", "<style>", ".controls{", "width: 20%;", "float: left;", "text-align: right;", "}", ".viewport{", "width: 75%;", "}" "svg{","background-color: #212121;", "margin: 2.4em;", "}", "</style>", "</head>", "<body onload=\"setDisplay()\">", "<section class=\"controls\">"]
+tags = ["<!DOCTYPE html>", "<html>", "<head>", "<style>", ".controls{", "width: 20%;", "float: left;", "text-align: right;", "}", ".viewport{", "width: 75%;", "zoom: 1.0", "}", "svg{","background-color: #212121;", "margin: 2.4em;", "}", "</style>", "</head>", "<body onload=\"setDisplay(); zoomReset()\">", "<section class=\"controls\">"]
 
 
 
@@ -26,10 +26,12 @@ with open("filenames.txt", "r") as fromFile:
 # put in the checkboxes to display the layers
 for layer in layerNames:
     tags.append("<p><input type=\"checkbox\" onchange=\"Display('" + layer[0:-4] + "')\"  checked=\"checked\">" + layer[0:-4] + "</p>")
+
+tags.append("<p><button onclick=\"zoomIn()\">Zoom In</button></p>")
+tags.append("<p><button onclick=\"zoomOut()\">Zoom Out</button></p>")
+tags.append("<p><button onclick=\"zoomReset()\">Reset Zoom</button></p>")
 tags.append("</section>")
-tags.append("<section class=\"viewport\">")
-
-
+tags.append("<section class=\"viewport\" id=\"viewport\">")
 
 
 
@@ -72,6 +74,21 @@ tags.append("else{")
 tags.append("document.getElementById(layer).style.display = \"none\";")
 tags.append("}")
 tags.append("}//end Display()")
+tags.append("function zoomIn(){")
+tags.append("pcb = document.getElementById('viewport');")
+tags.append("if(pcb.style.zoom < 8.0){")
+tags.append("pcb.style.zoom *= 1.3;")
+tags.append("}")
+tags.append("}//end zoomIn()")
+tags.append("function zoomOut(){")
+tags.append("pcb = document.getElementById('viewport');")
+tags.append("if(pcb.style.zoom > 0.3){")
+tags.append("pcb.style.zoom *= 0.7;")
+tags.append("}")
+tags.append("}//end zoomIn()")
+tags.append("function zoomReset(){")
+tags.append("document.getElementById('viewport').style.zoom = 1.0;")
+tags.append("}//end zoomIn()")
 tags.append("</script>")
 tags.append("</body>")
 tags.append("</html>")
