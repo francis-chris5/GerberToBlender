@@ -49,7 +49,6 @@ class ImportPCB(Operator, ImportHelper):
     filename_ext = "."
     use_filter_folder = True
     
-    
     def execute(self, context):
         try:
             filenames = []
@@ -185,19 +184,13 @@ def revealAll():
 def import_svg(dir, file):
     bpy.ops.import_curve.svg(filepath=(dir + "/" + file))
 
-
-    context = bpy.context
-    scene = context.scene
-
     col = bpy.data.collections.get(file)
     if col:
         for obj in col.objects:    
             obj.select_set(True)
             bpy.context.view_layer.objects.active = obj
             obj.to_mesh(preserve_all_data_layers=True)
-            
-
-    
+               
     bpy.ops.object.join()
     layer = bpy.context.selected_objects[0]
     layer.name = file[0:-4]
@@ -205,7 +198,6 @@ def import_svg(dir, file):
     bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
     bpy.ops.object.convert(target="MESH") 
 
-    
     if "layers" not in bpy.data.collections:
         bpy.ops.object.move_to_collection(collection_index = 0, is_new = True, new_collection_name="layers")
     else:
@@ -214,8 +206,6 @@ def import_svg(dir, file):
     col = bpy.data.collections.get(file)
     if col:
         bpy.data.collections.remove(col)
-    
-    
     col = bpy.data.collections.get("layers")
     if col:
         for obj in col.objects:
@@ -449,6 +439,8 @@ def harden():
 
 
 
+
+# run the script
 if __name__ == "__main__":
     register()
     bpy.ops.pcb.import_svg("INVOKE_DEFAULT")
