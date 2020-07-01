@@ -34,7 +34,7 @@ run create_pcb_viewer.py and embed, or copy, the result into the webpage documen
   
 </blockquote>
 
-
+I also included the scripts to work with one single SELECTED layer at a time, if corrections are necessary or if you prefer to build the layers one at a time.
 
 The testing so far was PCB created with EasyEDA online PCB editing software, SVG files exported from GerbV 2.7 Gerber Viewer Software, and scripted with Blender 2.8.3 API.
 
